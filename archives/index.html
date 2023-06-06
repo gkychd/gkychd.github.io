@@ -1626,7 +1626,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: "env",
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1686022395591),
+    lastupdate: new Date(1686058264336),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate","webinfo","text"],
       for_post: ["toc"],
@@ -1646,7 +1646,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       fancybox: {"css":"https://unpkg.com/volantis-static@0.0.1654736714924/libs/@fancyapps/ui/dist/fancybox.css","js":"https://unpkg.com/volantis-static@0.0.1654736714924/libs/@fancyapps/ui/dist/fancybox.umd.js"},
       
       aplayer: {
-        id: 1999585356,
+        id: 1295442297,
         enable:true
       },
       
@@ -2696,7 +2696,11 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         <div class="aplayer-container">
           
 
-  
+   
+     
+    <script>
+      const MetingPlusAudio = [{"name":"cisea","title":"cisea","artist":"Zhangjie","url":"/music/cisea.mp3","lrc":"/music/cisea.lrc","cover":"/music/cisea.jpg"},{"name":"夜的钢琴曲","artist":"K. Williams","title":"夜的钢琴曲","url":"/music/夜的钢琴曲.mp3","lrc":"/music/夜的钢琴曲.lrc","cover":"/music/夜的钢琴曲.jpg"}];
+    </script>
     <meting-js
       theme='#1BCDFC'
       autoplay='true'
@@ -2706,13 +2710,14 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       fixed='true'
       list-max-height='320px'
       server='netease'
-      type='playlist'
-      id='1999585356'
-      list-folded='true'>
-    </meting-js>
-  
-
-
+      type='song'
+      id='1295442297'
+      list-folded='true'
+      audio='MetingPlusAudio'
+      >
+      </meting-js>
+    
+ 
         </div>
       
     
@@ -2894,11 +2899,11 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
 
   <script>
-  volantis.css("https://unpkg.com/volantis-static@0.0.1654736714924/libs/aplayer/dist/APlayer.min.css");
+  volantis.css("https://unpkg.com/aplayer@1.10/dist/APlayer.min.css");
   (async () => {
     // APlayer 需要在  MetingJS 之前加载
-    await volantis.js("https://unpkg.com/volantis-static@0.0.1654736714924/libs/aplayer/dist/APlayer.min.js")
-    await volantis.js("https://unpkg.com/volantis-static@0.0.1654736714924/libs/meting/dist/Meting.min.js")
+    await volantis.js("https://unpkg.com/aplayer@1.10/dist/APlayer.min.js")
+    await volantis.js("/meting-plus.js")
   
   })();
 
@@ -2917,7 +2922,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
             Metings.forEach((item, index) => {
               const aplayerItem = item.aplayer; if(!aplayerItem) return;
               const rightAplayerCheck = 'true' === 'true'
-                && item.meta.id === '1999585356';
+                && item.meta.id === '1295442297';
               if(rightAplayerCheck && typeof RightMenuAplayer !="undefined") RightMenuAplayer.checkAPlayer();
               if(aplayerItem.events.events.play.every(item => {return item.name !== 'messagePlay'})) {
                 aplayerItem.on('play', function messagePlay() {
