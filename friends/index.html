@@ -1628,7 +1628,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: "env",
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1685976229614),
+    lastupdate: new Date(1686022395591),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate","webinfo","text"],
       for_post: ["toc"],
@@ -2452,10 +2452,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         <div class='friends-group'>
           <br>
           <h2 class='friend-header'>
-            第一个博客
+            博客风格
           </h2>
           
-            <p>带我入门的博主</p>
+            <p>较好的博客风格</p>
 
           
           
@@ -2470,13 +2470,55 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
                       
                     </div>
                     <div class='friend-right'>
-                      <p class="friend-name">jiahao</p>
+                      <p class="friend-name">laijiahao</p>
                       
+                      
+                        <div class='friend-tags-wrapper'>
+                          <p class="tags">带我博客入门的博主</p>
+                        </div>
                       
                     </div>
                   </a>
                 
               
+                
+                  <a class='friend-card'
+                    target="_blank" rel="external noopener noreferrer" href="https://hycbook.com/">
+                    <div class='friend-left'>
+                      
+                        <img class='avatar' src='https://s2.loli.net/2023/06/05/ELdBityCW7zJNQg.png'/>
+                      
+                    </div>
+                    <div class='friend-right'>
+                      <p class="friend-name">兼一书虫</p>
+                      
+                      
+                        <div class='friend-tags-wrapper'>
+                          <p class="tags">Butterfly, 图像识别</p>
+                        </div>
+                      
+                    </div>
+                  </a>
+                
+              
+                
+                  <a class='friend-card'
+                    target="_blank" rel="external noopener noreferrer" href="https://xaoxuu.com/">
+                    <div class='friend-left'>
+                      
+                        <img class='avatar' src='https://avatars.githubusercontent.com/u/16400144?v=4'/>
+                      
+                    </div>
+                    <div class='friend-right'>
+                      <p class="friend-name">XAOXUU</p>
+                      
+                      
+                        <div class='friend-tags-wrapper'>
+                          <p class="tags">volantis开发者</p>
+                        </div>
+                      
+                    </div>
+                  </a>
                 
               
             </div>
@@ -2489,7 +2531,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
             自动驾驶
           </h2>
           
-            <p>ML, CV, SLAM, Robotics, Autonomous Driving</p>
+            <p>自动驾驶相关的技术博客</p>
 
           
           
@@ -2506,6 +2548,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
                     <div class='friend-right'>
                       <p class="friend-name">LeijieZhang</p>
                       
+                      
+                        <div class='friend-tags-wrapper'>
+                          <p class="tags">ML, CV, SLAM, Robotics, Autonomous Driving</p>
+                        </div>
                       
                     </div>
                   </a>
@@ -2731,11 +2777,11 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     <meting-js
       theme='#1BCDFC'
-      autoplay='false'
+      autoplay='true'
       volume='0.7'
       loop='all'
       order='list'
-      fixed='false'
+      fixed='true'
       list-max-height='320px'
       server='netease'
       type='playlist'
@@ -2926,11 +2972,11 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
 
   <script>
-  volantis.css("https://unpkg.com/aplayer@1.10/dist/APlayer.min.css");
+  volantis.css("https://unpkg.com/volantis-static@0.0.1654736714924/libs/aplayer/dist/APlayer.min.css");
   (async () => {
     // APlayer 需要在  MetingJS 之前加载
-    await volantis.js("https://unpkg.com/aplayer@1.10/dist/APlayer.min.js")
-    await volantis.js("https://unpkg.com/meting@2.0/dist/Meting.min.js")
+    await volantis.js("https://unpkg.com/volantis-static@0.0.1654736714924/libs/aplayer/dist/APlayer.min.js")
+    await volantis.js("https://unpkg.com/volantis-static@0.0.1654736714924/libs/meting/dist/Meting.min.js")
   
   })();
 
