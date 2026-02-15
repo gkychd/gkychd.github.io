@@ -1,218 +1,416 @@
-<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><title>文章2026 | 我的技术博客</title><noscript>开启JavaScript才能访问本站哦~</noscript><link rel="icon" href="/img/favicon.png"><link rel="stylesheet" href="/css/index.css?v=3.0.21"><link rel="canonical" href="https://gkychd.github.io/archives/2026/02/index.html"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.7.2/css/all.min.css"><!-- Feature-specific CSS--><!-- aplayer--><!-- swiper--><!-- fancybox ui--><!-- katex--><!-- Open Graph--><meta name="description" content="技术笔记与分享"><!-- pwa--><meta name="apple-mobile-web-app-capable" content="我的技术博客"><meta name="theme-color" content="var(--efu-main)"><meta name="apple-mobile-web-app-status-bar-style" content="var(--efu-main)"><link rel="bookmark" href="/img/favicon.png"><link rel="apple-touch-icon" href="/img/favicon.png" sizes="180x180"><script>console.log(' %c Solitude %c ' + '3.0.21' + ' %c https://github.com/everfu/hexo-theme-solitude',
-    'background:#35495e ; padding: 1px; border-radius: 3px 0 0 3px;  color: #fff',
-    'background:#ff9a9a ; padding: 1px; border-radius: 0 3px 3px 0;  color: #fff',
-    'background:unset ; padding: 1px; border-radius: 0 3px 3px 0;  color: #fff')
-</script><script>(()=>{
-        const saveToLocal = {
-            set: function setWithExpiry(key, value, ttl) {
-                if (ttl === 0)
-                    return
-                const now = new Date()
-                const expiryDay = ttl * 86400000
-                const item = {
-                    value: value,
-                    expiry: now.getTime() + expiryDay
-                }
-                localStorage.setItem(key, JSON.stringify(item))
-            },
-            get: function getWithExpiry(key) {
-                const itemStr = localStorage.getItem(key)
 
-                if (!itemStr) {
-                    return undefined
-                }
-                const item = JSON.parse(itemStr)
-                const now = new Date()
 
-                if (now.getTime() > item.expiry) {
-                    localStorage.removeItem(key)
-                    return undefined
-                }
-                return item.value
-            }
-        };
-        window.utils = {
-            saveToLocal: saveToLocal,
-            getCSS: (url, id = false) => new Promise((resolve, reject) => {
-              const link = document.createElement('link')
-              link.rel = 'stylesheet'
-              link.href = url
-              if (id) link.id = id
-              link.onerror = reject
-              link.onload = link.onreadystatechange = function() {
-                const loadState = this.readyState
-                if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
-                link.onload = link.onreadystatechange = null
-                resolve()
-              }
-              document.head.appendChild(link)
-            }),
-            getScript: (url, attr = {}) => new Promise((resolve, reject) => {
-              const script = document.createElement('script')
-              script.src = url
-              script.async = true
-              script.onerror = reject
-              script.onload = script.onreadystatechange = function() {
-                const loadState = this.readyState
-                if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
-                script.onload = script.onreadystatechange = null
-                resolve()
-              }
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
 
-              Object.keys(attr).forEach(key => {
-                script.setAttribute(key, attr[key])
-              })
 
-              document.head.appendChild(script)
-            }),
-            addGlobalFn: (key, fn, name = false, parent = window) => {
-                const globalFn = parent.globalFn || {}
-                const keyObj = globalFn[key] || {}
 
-                if (name && keyObj[name]) return
+<head>
+  <meta charset="UTF-8">
 
-                name = name || Object.keys(keyObj).length
-                keyObj[name] = fn
-                globalFn[key] = keyObj
-                parent.globalFn = globalFn
-            },
-            addEventListenerPjax: (ele, event, fn, option = false) => {
-              ele.addEventListener(event, fn, option)
-              utils.addGlobalFn('pjax', () => {
-                  ele.removeEventListener(event, fn, option)
-              })
-            },
-            diffDateFormat: (selector) => {
-                selector.forEach(item => {
-                    const date = new Date(item.getAttribute('datetime') || item.textContent);
-                    item.textContent = (date.getMonth() + 1).toString()+'/'+date.getDate().toString();
-                });
-            },
-        }
-    })()</script><!-- theme--><script>initTheme = () => {
-    let isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
-    const cachedMode = utils.saveToLocal.get('theme');
-    if (cachedMode === undefined) {
-        const nowMode =
-            isDarkMode ? 'dark' : 'light'
-        document.documentElement.setAttribute('data-theme', nowMode);
-    } else {
-        document.documentElement.setAttribute('data-theme', cachedMode);
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="gkychd">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="技术笔记与分享">
+<meta property="og:type" content="website">
+<meta property="og:title" content="归档">
+<meta property="og:url" content="https://gkychd.github.io/archives/2026/02/index.html">
+<meta property="og:site_name" content="我的技术博客">
+<meta property="og:description" content="技术笔记与分享">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:author" content="gkychd">
+<meta name="twitter:card" content="summary_large_image">
+  
+  
+  
+  <title>归档 - 我的技术博客</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"gkychd.github.io","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
     }
-    typeof rm === 'object' && rm.mode(cachedMode === 'dark' && isDarkMode)
-}
-initTheme()</script><script>const GLOBAL_CONFIG = {
-    root: '/',
-    algolia: undefined,
-    localsearch: undefined,
-    runtime: '2023-04-20 00:00:00',
-    lazyload: {
-        enable: false,
-        error: '/img/error_load.avif'
-    },
-    copyright: false,
-    highlight: {"limit":200,"expand":true,"copy":true,"syntax":"highlight.js"},
-    randomlink: false,
-    lang: {"theme":{"dark":"已切换至深色模式","light":"已切换至浅色模式"},"copy":{"success":"复制成功","error":"复制失败"},"backtop":"返回顶部","time":{"day":"天前","hour":"小时前","just":"刚刚","min":"分钟前","month":"个月前"},"day":" 天","f12":"开发者模式已打开，请遵循GPL协议。","totalk":"无需删除空行，直接输入评论即可"},
-    aside: {
-        state: {
-            morning: "✨ 早上好，新的一天开始了",
-            noon: "🍲 午餐时间",
-            afternoon: "🌞 下午好",
-            night: "早点休息",
-            goodnight: "晚安 😴",
-        },
-        witty_words: [],
-        witty_comment: {
-            prefix: '好久不见，',
-            back: '欢迎再次回来，',
-        },
-    },
-    covercolor: {
-        enable: false
-    },
-    comment: false,
-    lightbox: 'null',
-    right_menu: false,
-    translate: {"translateDelay":0,"defaultEncoding":2},
-    lure: false,
-    expire: false,
-};</script><script id="config-diff">var PAGE_CONFIG = {
-    is_post: false,
-    is_page: true,
-    is_home: false,
-    page: '',
-    toc: false,
-    comment: false,
-    ai_text: false,
-    color: false,
-}</script><meta name="generator" content="Hexo 7.3.0"></head><body id="body"><div id="console"><div class="close-btn" onclick="sco.hideConsole()"><i class="solitude fas fa-xmark"></i></div><div class="console-card-group"><div class="console-card-group-right"><div class="console-card tags" onclick="sco.hideConsole()"><div class="card-content"><div class="author-content-item-tips">标签</div><div class="author-content-item-title">寻找感兴趣的领域</div></div><div class="card-tag-cloud"><a href="/tags/AI/">AI<sup>1</sup></a><a href="/tags/Scaling-Law/">Scaling Law<sup>1</sup></a><a href="/tags/%E5%A4%A7%E6%A8%A1%E5%9E%8B/">大模型<sup>1</sup></a><a href="/tags/Hexo/">Hexo<sup>1</sup></a><a href="/tags/%E4%B8%BB%E9%A2%98/">主题<sup>1</sup></a><a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构<sup>1</sup></a><a href="/tags/%E7%AE%97%E6%B3%95/">算法<sup>1</sup></a><a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F/">计算机系统<sup>1</sup></a><a href="/tags/CSAPP/">CSAPP<sup>1</sup></a><a href="/tags/CUDA/">CUDA<sup>1</sup></a><a href="/tags/%E5%B9%B6%E8%A1%8C%E8%AE%A1%E7%AE%97/">并行计算<sup>2</sup></a><a href="/tags/GPU/">GPU<sup>3</sup></a><a href="/tags/OpenCL/">OpenCL<sup>1</sup></a><a href="/tags/%E5%A4%A7%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B/">大语言模型<sup>1</sup></a><a href="/tags/LLM/">LLM<sup>2</sup></a><a href="/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/">深度学习<sup>1</sup></a><a href="/tags/llama-cpp/">llama.cpp<sup>1</sup></a><a href="/tags/%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2/">本地部署<sup>1</sup></a><a href="/tags/Python/">Python<sup>1</sup></a><a href="/tags/%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/">编程基础<sup>1</sup></a><a href="/tags/ARM/">ARM<sup>1</sup></a><a href="/tags/Streamline/">Streamline<sup>1</sup></a><a href="/tags/%E6%80%A7%E8%83%BD%E5%88%86%E6%9E%90/">性能分析<sup>2</sup></a><a href="/tags/Mali/">Mali<sup>1</sup></a><a href="/tags/OpenCLAW/">OpenCLAW<sup>1</sup></a><a href="/tags/%E6%8C%87%E4%BB%A4/">指令<sup>1</sup></a></div></div><div class="console-card history" onclick="sco.hideConsole()"><ul class="card-archive-list"><li class="item"><a href="/archives/2026/02/"><span class="date">2026/02</span><div class="count-group"><span class="count">13</span><span class="unit">篇</span></div></a></li><li class="item"><a href="/archives/"><span class="date">全部文章</span><div class="count-group"><span class="count">13</span><span class="unit">篇</span></div></a></li></ul></div></div></div><div class="button-group"><div class="console-btn-item"><span class="darkmode_switchbutton" onclick="sco.switchDarkMode()" title="昼夜切换"><i class="solitude fas fa-circle-half-stroke"></i></span></div><div class="console-btn-item" id="consoleHideAside"><span class="asideSwitch" onclick="sco.switchHideAside()" title="边栏显示控制"><i class="solitude fas fa-arrows-left-right-to-line"></i></span></div></div><div class="console-mask" onclick="sco.hideConsole()"></div></div><div id="sidebar" style="zoom: 1;"><div id="menu-mask" style="display: none;"></div><div id="sidebar-menus"><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">13</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">分类</div><div class="length-num">10</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">标签</div><div class="length-num">26</div></a></div></div></div><span class="sidebar-menu-item-title">功能</span><div class="sidebar-menu-item"><span class="darkmode_switchbutton menu-child" onclick="sco.switchDarkMode()"><i class="solitude fas fa-circle-half-stroke"></i><span>显示模式</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><span>首页</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span>归档</span></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><span>link</span></a></li><li><a class="site-page child" href="/fas%20fa-folder-closed"><span>icon</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span>分类</span></a><ul class="menus_item_child"><li><a class="site-page child" href="/categories/"><span>link</span></a></li><li><a class="site-page child" href="/fas%20fa-clone"><span>icon</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span>标签</span></a><ul class="menus_item_child"><li><a class="site-page child" href="/tags/"><span>link</span></a></li><li><a class="site-page child" href="/fas%20fa-tags"><span>icon</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span>关于</span></a><ul class="menus_item_child"><li><a class="site-page child" href="/about/"><span>link</span></a></li><li><a class="site-page child" href="/fas%20fa-user"><span>icon</span></a></li></ul></div></div><span class="sidebar-menu-item-title">标签</span><div class="card-tags"><div class="card-tag-cloud"><a href="/tags/AI/">AI<sup>1</sup></a><a href="/tags/Scaling-Law/">Scaling Law<sup>1</sup></a><a href="/tags/%E5%A4%A7%E6%A8%A1%E5%9E%8B/">大模型<sup>1</sup></a><a href="/tags/Hexo/">Hexo<sup>1</sup></a><a href="/tags/%E4%B8%BB%E9%A2%98/">主题<sup>1</sup></a><a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构<sup>1</sup></a><a href="/tags/%E7%AE%97%E6%B3%95/">算法<sup>1</sup></a><a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F/">计算机系统<sup>1</sup></a><a href="/tags/CSAPP/">CSAPP<sup>1</sup></a><a href="/tags/CUDA/">CUDA<sup>1</sup></a><a href="/tags/%E5%B9%B6%E8%A1%8C%E8%AE%A1%E7%AE%97/">并行计算<sup>2</sup></a><a href="/tags/GPU/">GPU<sup>3</sup></a><a href="/tags/OpenCL/">OpenCL<sup>1</sup></a><a href="/tags/%E5%A4%A7%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B/">大语言模型<sup>1</sup></a><a href="/tags/LLM/">LLM<sup>2</sup></a><a href="/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/">深度学习<sup>1</sup></a><a href="/tags/llama-cpp/">llama.cpp<sup>1</sup></a><a href="/tags/%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2/">本地部署<sup>1</sup></a><a href="/tags/Python/">Python<sup>1</sup></a><a href="/tags/%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/">编程基础<sup>1</sup></a><a href="/tags/ARM/">ARM<sup>1</sup></a><a href="/tags/Streamline/">Streamline<sup>1</sup></a><a href="/tags/%E6%80%A7%E8%83%BD%E5%88%86%E6%9E%90/">性能分析<sup>2</sup></a><a href="/tags/Mali/">Mali<sup>1</sup></a><a href="/tags/OpenCLAW/">OpenCLAW<sup>1</sup></a><a href="/tags/%E6%8C%87%E4%BB%A4/">指令<sup>1</sup></a></div></div></div></div><div class="page" id="body-wrap"><header class="not-top-img" id="page-header"><nav class="show" id="nav"><div id="nav-group"><div id="blog_name"><a href="/" title="返回博客主页" id="site-name"><span class="title">我的技术博客</span><i class="solitude fas fa-home"></i></a></div><div id="page-name-mask"><div id="page-name"><a id="page-name-text" onclick="sco.toTop()">文章2026</a></div></div><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><span>首页</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span>归档</span></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><span>link</span></a></li><li><a class="site-page child" href="/fas%20fa-folder-closed"><span>icon</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span>分类</span></a><ul class="menus_item_child"><li><a class="site-page child" href="/categories/"><span>link</span></a></li><li><a class="site-page child" href="/fas%20fa-clone"><span>icon</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span>标签</span></a><ul class="menus_item_child"><li><a class="site-page child" href="/tags/"><span>link</span></a></li><li><a class="site-page child" href="/fas%20fa-tags"><span>icon</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span>关于</span></a><ul class="menus_item_child"><li><a class="site-page child" href="/about/"><span>link</span></a></li><li><a class="site-page child" href="/fas%20fa-user"><span>icon</span></a></li></ul></div></div></div><div id="nav-left"></div><div id="nav-right"><div class="nav-button" id="nav-totop" onclick="sco.toTop()"><a class="totopbtn"><i class="solitude fas fa-arrow-up"></i><span id="percent">0</span></a></div><div id="toggle-menu"><a class="site-page"><i class="solitude fas fa-bars"></i></a></div></div></div></nav></header><main class="layout" id="content-inner"><div id="archive"><div class="article-sort-title">文章<sup>13</sup></div><div class="article-sort"><div class="article-sort-item year">2026</div><div class="article-sort-item"><a class="article-sort-item-img" href="/2026/02/15/hello-world/" title="Hello World"><img src="/" alt="Hello World"></a><div class="article-sort-item-info"><a class="article-sort-item-title" href="/2026/02/15/hello-world/" title="Hello World" onclick="window.event.cancelBubble=true;">Hello World</a><div class="article-sort-item-tags"></div></div></div><div class="article-sort-item"><a class="article-sort-item-img" href="/2026/02/15/ai-infra/scaling-law/" title="Scaling Law"><img src="/" alt="Scaling Law"></a><div class="article-sort-item-info"><a class="article-sort-item-title" href="/2026/02/15/ai-infra/scaling-law/" title="Scaling Law" onclick="window.event.cancelBubble=true;">Scaling Law</a><div class="article-sort-item-tags"><a class="article-meta__tags" href="/tags/AI/" onclick="window.event.cancelBubble=true;"><span class="tags-punctuation"><i class="solitude fas fa-hashtag"></i>AI</span></a><a class="article-meta__tags" href="/tags/Scaling-Law/" onclick="window.event.cancelBubble=true;"><span class="tags-punctuation"><i class="solitude fas fa-hashtag"></i>Scaling Law</span></a><a class="article-meta__tags" href="/tags/%E5%A4%A7%E6%A8%A1%E5%9E%8B/" onclick="window.event.cancelBubble=true;"><span class="tags-punctuation"><i class="solitude fas fa-hashtag"></i>大模型</span></a></div></div></div><div class="article-sort-item"><a class="article-sort-item-img" href="/2026/02/15/blog/hexo-theme-switch/" title="Hexo 主题切换"><img src="/" alt="Hexo 主题切换"></a><div class="article-sort-item-info"><a class="article-sort-item-title" href="/2026/02/15/blog/hexo-theme-switch/" title="Hexo 主题切换" onclick="window.event.cancelBubble=true;">Hexo 主题切换</a><div class="article-sort-item-tags"><a class="article-meta__tags" href="/tags/Hexo/" onclick="window.event.cancelBubble=true;"><span class="tags-punctuation"><i class="solitude fas fa-hashtag"></i>Hexo</span></a><a class="article-meta__tags" href="/tags/%E4%B8%BB%E9%A2%98/" onclick="window.event.cancelBubble=true;"><span class="tags-punctuation"><i class="solitude fas fa-hashtag"></i>主题</span></a></div></div></div><div class="article-sort-item"><a class="article-sort-item-img" href="/2026/02/15/algorithm/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/" title="数据结构与算法"><img src="/" alt="数据结构与算法"></a><div class="article-sort-item-info"><a class="article-sort-item-title" href="/2026/02/15/algorithm/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/" title="数据结构与算法" onclick="window.event.cancelBubble=true;">数据结构与算法</a><div class="article-sort-item-tags"><a class="article-meta__tags" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" onclick="window.event.cancelBubble=true;"><span class="tags-punctuation"><i class="solitude fas fa-hashtag"></i>数据结构</span></a><a class="article-meta__tags" href="/tags/%E7%AE%97%E6%B3%95/" onclick="window.event.cancelBubble=true;"><span class="tags-punctuation"><i class="solitude fas fa-hashtag"></i>算法</span></a></div></div></div><div class="article-sort-item"><a class="article-sort-item-img" href="/2026/02/15/cs-fundamentals/csapp/" title="深入理解计算机系统"><img src="/" alt="深入理解计算机系统"></a><div class="article-sort-item-info"><a class="article-sort-item-title" href="/2026/02/15/cs-fundamentals/csapp/" title="深入理解计算机系统" onclick="window.event.cancelBubble=true;">深入理解计算机系统</a><div class="article-sort-item-tags"><a class="article-meta__tags" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F/" onclick="window.event.cancelBubble=true;"><span class="tags-punctuation"><i class="solitude fas fa-hashtag"></i>计算机系统</span></a><a class="article-meta__tags" href="/tags/CSAPP/" onclick="window.event.cancelBubble=true;"><span class="tags-punctuation"><i class="solitude fas fa-hashtag"></i>CSAPP</span></a></div></div></div><div class="article-sort-item"><a class="article-sort-item-img" href="/2026/02/15/hpc/cuda-parallel-computing/" title="CUDA 并行计算"><img src="/" alt="CUDA 并行计算"></a><div class="article-sort-item-info"><a class="article-sort-item-title" href="/2026/02/15/hpc/cuda-parallel-computing/" title="CUDA 并行计算" onclick="window.event.cancelBubble=true;">CUDA 并行计算</a><div class="article-sort-item-tags"><a class="article-meta__tags" href="/tags/CUDA/" onclick="window.event.cancelBubble=true;"><span class="tags-punctuation"><i class="solitude fas fa-hashtag"></i>CUDA</span></a><a class="article-meta__tags" href="/tags/%E5%B9%B6%E8%A1%8C%E8%AE%A1%E7%AE%97/" onclick="window.event.cancelBubble=true;"><span class="tags-punctuation"><i class="solitude fas fa-hashtag"></i>并行计算</span></a><a class="article-meta__tags" href="/tags/GPU/" onclick="window.event.cancelBubble=true;"><span class="tags-punctuation"><i class="solitude fas fa-hashtag"></i>GPU</span></a></div></div></div><div class="article-sort-item"><a class="article-sort-item-img" href="/2026/02/15/hpc/opencl-guide/" title="OpenCL 指南"><img src="/" alt="OpenCL 指南"></a><div class="article-sort-item-info"><a class="article-sort-item-title" href="/2026/02/15/hpc/opencl-guide/" title="OpenCL 指南" onclick="window.event.cancelBubble=true;">OpenCL 指南</a><div class="article-sort-item-tags"><a class="article-meta__tags" href="/tags/%E5%B9%B6%E8%A1%8C%E8%AE%A1%E7%AE%97/" onclick="window.event.cancelBubble=true;"><span class="tags-punctuation"><i class="solitude fas fa-hashtag"></i>并行计算</span></a><a class="article-meta__tags" href="/tags/GPU/" onclick="window.event.cancelBubble=true;"><span class="tags-punctuation"><i class="solitude fas fa-hashtag"></i>GPU</span></a><a class="article-meta__tags" href="/tags/OpenCL/" onclick="window.event.cancelBubble=true;"><span class="tags-punctuation"><i class="solitude fas fa-hashtag"></i>OpenCL</span></a></div></div></div><div class="article-sort-item"><a class="article-sort-item-img" href="/2026/02/15/llm/illustrated-llm/" title="图解大语言模型"><img src="/" alt="图解大语言模型"></a><div class="article-sort-item-info"><a class="article-sort-item-title" href="/2026/02/15/llm/illustrated-llm/" title="图解大语言模型" onclick="window.event.cancelBubble=true;">图解大语言模型</a><div class="article-sort-item-tags"><a class="article-meta__tags" href="/tags/%E5%A4%A7%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B/" onclick="window.event.cancelBubble=true;"><span class="tags-punctuation"><i class="solitude fas fa-hashtag"></i>大语言模型</span></a><a class="article-meta__tags" href="/tags/LLM/" onclick="window.event.cancelBubble=true;"><span class="tags-punctuation"><i class="solitude fas fa-hashtag"></i>LLM</span></a><a class="article-meta__tags" href="/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" onclick="window.event.cancelBubble=true;"><span class="tags-punctuation"><i class="solitude fas fa-hashtag"></i>深度学习</span></a></div></div></div><div class="article-sort-item"><a class="article-sort-item-img" href="/2026/02/15/llm-deploy/llama-cpp-deploy/" title="llama.cpp 本地部署教程"><img src="/" alt="llama.cpp 本地部署教程"></a><div class="article-sort-item-info"><a class="article-sort-item-title" href="/2026/02/15/llm-deploy/llama-cpp-deploy/" title="llama.cpp 本地部署教程" onclick="window.event.cancelBubble=true;">llama.cpp 本地部署教程</a><div class="article-sort-item-tags"><a class="article-meta__tags" href="/tags/LLM/" onclick="window.event.cancelBubble=true;"><span class="tags-punctuation"><i class="solitude fas fa-hashtag"></i>LLM</span></a><a class="article-meta__tags" href="/tags/llama-cpp/" onclick="window.event.cancelBubble=true;"><span class="tags-punctuation"><i class="solitude fas fa-hashtag"></i>llama.cpp</span></a><a class="article-meta__tags" href="/tags/%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2/" onclick="window.event.cancelBubble=true;"><span class="tags-punctuation"><i class="solitude fas fa-hashtag"></i>本地部署</span></a></div></div></div><div class="article-sort-item"><a class="article-sort-item-img" href="/2026/02/15/python/python-learning/" title="Python 编程学习笔记"><img src="/" alt="Python 编程学习笔记"></a><div class="article-sort-item-info"><a class="article-sort-item-title" href="/2026/02/15/python/python-learning/" title="Python 编程学习笔记" onclick="window.event.cancelBubble=true;">Python 编程学习笔记</a><div class="article-sort-item-tags"><a class="article-meta__tags" href="/tags/Python/" onclick="window.event.cancelBubble=true;"><span class="tags-punctuation"><i class="solitude fas fa-hashtag"></i>Python</span></a><a class="article-meta__tags" href="/tags/%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/" onclick="window.event.cancelBubble=true;"><span class="tags-punctuation"><i class="solitude fas fa-hashtag"></i>编程基础</span></a></div></div></div></div><nav id="pagination"><div class="pagination"><span class="page-number current">1</span><a class="page-number" href="/archives/2026/02/page/2/">2</a><a class="extend next" rel="next" href="/archives/2026/02/page/2/"><div class="pagination_tips_next">下一页</div> <i class="solitude fas fa-chevron-right"></i></a><div class="toPageGroup"><input id="toPageText" oninput="value=value.replace(/[^0-9]/g,'')" maxlength="3" title="跳转到指定页面" onkeyup="if (this.value === '0') this.value = ''"><a id="toPageButton" onclick="sco.toPage()"><i class="solitude fas fa-angles-right"></i></a></div></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="card-content"><div class="card-info-avatar is-center"><div class="top-group"><div class="sayhi" id="sayhi" onclick="sco.changeWittyWord()"></div></div></div><div class="avatar"><img alt="头像" src="/img/logo.png"></div><div class="description">这是我的技术博客</div><div class="bottom-group"><span class="left"><div class="name">gkychd</div><div class="desc">技术笔记与分享</div></span><div class="social-icons is-center"></div></div></div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="solitude fas fa-map"></i><span>最近发布</span></div><div class="aside-list"><a class="aside-list-item" href="/2026/02/15/hello-world/" title="Hello World"><div class="content"><span class="title" href="/2026/02/15/hello-world/" title="Hello World">Hello World</span></div></a><a class="aside-list-item" href="/2026/02/15/ai-infra/scaling-law/" title="Scaling Law"><div class="content"><span class="title" href="/2026/02/15/ai-infra/scaling-law/" title="Scaling Law">Scaling Law</span><span class="categories" href="/2026/02/15/ai-infra/scaling-law/">AI基础设施</span></div></a><a class="aside-list-item" href="/2026/02/15/blog/hexo-theme-switch/" title="Hexo 主题切换"><div class="content"><span class="title" href="/2026/02/15/blog/hexo-theme-switch/" title="Hexo 主题切换">Hexo 主题切换</span><span class="categories" href="/2026/02/15/blog/hexo-theme-switch/">博客</span></div></a><a class="aside-list-item" href="/2026/02/15/algorithm/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/" title="数据结构与算法"><div class="content"><span class="title" href="/2026/02/15/algorithm/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/" title="数据结构与算法">数据结构与算法</span><span class="categories" href="/2026/02/15/algorithm/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/">算法</span></div></a><a class="aside-list-item" href="/2026/02/15/cs-fundamentals/csapp/" title="深入理解计算机系统"><div class="content"><span class="title" href="/2026/02/15/cs-fundamentals/csapp/" title="深入理解计算机系统">深入理解计算机系统</span><span class="categories" href="/2026/02/15/cs-fundamentals/csapp/">CS基础</span></div></a></div></div><div class="card-widget card-tags card-archives card-webinfo card-allinfo"><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章总数 :</div><div class="item-count">13</div></div><div class="webinfo-item"><div class="item-name">建站天数 :</div><div class="item-count" id="runtimeshow"></div></div><div class="webinfo-item"><div class="item-name">最后更新 :</div><time class="item-count" datetime="2026-02-15T08:15:33.467Z"></time></div></div></div></div></div></main><footer id="footer"><div id="st-footer"></div><div id="footer-bar"><div class="footer-bar-links"><div class="footer-bar-left"><div class="copyright">© 2023 - 2026 By<a class="footer-bar-link" href="/" title="gkychd">gkychd</a></div><div class="beian-group"><a class="footer-bar-link" target="_blank" rel="noopener" href="https://hexo.io/" title="框架：Hexo">框架：Hexo</a><a class="footer-bar-link" target="_blank" rel="noopener" href="https://github.com/everfu/hexo-theme-solitude" title="主题：Solitude">主题：Solitude</a></div></div><div class="footer-bar-right"></div></div></div><div class="comment-barrage needEndHide"></div></footer></div><div><!-- Critical scripts loaded synchronously--><script src="/js/utils.js?v=3.0.21"></script><script src="/js/main.js?v=3.0.21"></script><!-- Non-critical scripts loaded asynchronously--><script async src="/js/third_party/waterfall.min.js?v=3.0.21"></script><script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.min.js"></script><!-- Feature-specific scripts loaded asynchronously--><script defer src="/js/tw_cn.js?v=3.0.21"></script><!-- UI enhancement scripts--><script defer src="https://cdn.jsdelivr.net/npm/node-snackbar@0.1.16/dist/snackbar.min.js"></script><!-- Music player scripts--><!-- Cover color processing scripts--><script>window.paceOptions = {
-  restartOnPushState: false
-}
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
 
-utils.addGlobalFn('pjaxSend', () => {
-  Pace.restart()
-}, 'pace_restart')
-</script><script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js"></script><!-- Search functionality--><!-- Right menu functionality--><div class="js-pjax"></div></div><!-- pjax--><script>let pjax = null;
 
-function initPjax() {
-    if (typeof Pjax === 'undefined') {
-        console.warn('Pjax is not loaded yet, retrying...');
-        setTimeout(initPjax, 100);
+  
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 60vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Fluid</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="归档"></span>
+          
+        </div>
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      <div class="container nopadding-x-md">
+        <div id="board"
+          >
+          
+          <div class="container">
+            <div class="row">
+              <div class="col-12 col-md-10 m-auto">
+                
+
+<div class="list-group">
+  <p class="h4">共计 13 篇文章</p>
+  <hr>
+  
+  
+    
+      
+      <p class="h5">2026</p>
+    
+    <a href="/2026/02/15/hello-world/" class="list-group-item list-group-item-action">
+      <time>02-15</time>
+      <div class="list-group-item-title">Hello World</div>
+    </a>
+  
+    
+    <a href="/2026/02/15/ai-infra/scaling-law/" class="list-group-item list-group-item-action">
+      <time>02-15</time>
+      <div class="list-group-item-title">Scaling Law</div>
+    </a>
+  
+    
+    <a href="/2026/02/15/algorithm/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/" class="list-group-item list-group-item-action">
+      <time>02-15</time>
+      <div class="list-group-item-title">数据结构与算法</div>
+    </a>
+  
+    
+    <a href="/2026/02/15/blog/hexo-theme-switch/" class="list-group-item list-group-item-action">
+      <time>02-15</time>
+      <div class="list-group-item-title">Hexo 主题切换</div>
+    </a>
+  
+    
+    <a href="/2026/02/15/cs-fundamentals/csapp/" class="list-group-item list-group-item-action">
+      <time>02-15</time>
+      <div class="list-group-item-title">深入理解计算机系统</div>
+    </a>
+  
+    
+    <a href="/2026/02/15/hpc/cuda-parallel-computing/" class="list-group-item list-group-item-action">
+      <time>02-15</time>
+      <div class="list-group-item-title">CUDA 并行计算</div>
+    </a>
+  
+    
+    <a href="/2026/02/15/hpc/opencl-guide/" class="list-group-item list-group-item-action">
+      <time>02-15</time>
+      <div class="list-group-item-title">OpenCL 指南</div>
+    </a>
+  
+    
+    <a href="/2026/02/15/llm-deploy/llama-cpp-deploy/" class="list-group-item list-group-item-action">
+      <time>02-15</time>
+      <div class="list-group-item-title">llama.cpp 本地部署教程</div>
+    </a>
+  
+    
+    <a href="/2026/02/15/performance/ad1000-gpu-analysis/" class="list-group-item list-group-item-action">
+      <time>02-15</time>
+      <div class="list-group-item-title">AD1000 Mali GPU 性能分析</div>
+    </a>
+  
+    
+    <a href="/2026/02/15/performance/arm-streamline/" class="list-group-item list-group-item-action">
+      <time>02-15</time>
+      <div class="list-group-item-title">Arm Streaming 在域控的使用</div>
+    </a>
+  
+</div>
+
+
+  <nav aria-label="navigation">
+    <span class="pagination" id="pagination">
+      <span class="page-number current">1</span><a class="page-number" href="/archives/2026/02/page/2/#board">2</a><a class="extend next" rel="next" href="/archives/2026/02/page/2/#board"><i class="iconfont icon-arrowright"></i></a>
+    </span>
+  </nav>
+
+
+
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
         return;
-    }
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
 
-    pjax = new Pjax({
-        elements: 'a:not([target="_blank"])',
-        selectors: ["title","#body-wrap","#site-config","meta[name=\"description\"]",".js-pjax","meta[property^=\"og:\"]","#config-diff",".rs_show",".rs_hide"],
-        cacheBust: false,
-        analytics: false,
-        scrollRestoration: false
-    })
 
-    // 将 pjax 实例挂载到全局
-    window.pjax = pjax;
 
-    document.querySelectorAll('script[data-pjax]').forEach(item => {
-        const newScript = document.createElement('script')
-        const content = item.text || item.textContent || item.innerHTML || ""
-        Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
-        newScript.appendChild(document.createTextNode(content))
-        item.parentNode.replaceChild(newScript, item)
-    })
 
-    document.addEventListener('pjax:complete', () => {
-        window.refreshFn()
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
 
-        document.querySelectorAll('script[data-pjax]').forEach(item => {
-            const newScript = document.createElement('script')
-            const content = item.text || item.textContent || item.innerHTML || ""
-            Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
-            newScript.appendChild(document.createTextNode(content))
-            item.parentNode.replaceChild(newScript, item)
-        })
 
-        GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
 
-    })
 
-    document.addEventListener('pjax:error', (e) => {
-        if (e.request.status === 404) {
-            pjax.loadUrl('/404.html')
-        }
-    })
-}
+  <script  src="/js/local-search.js" ></script>
 
-// 初始化 Pjax
-if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initPjax);
-} else {
-    initPjax();
-}</script><!-- google adsense--></body></html>
-        <script>
-            const posts = ["2026/02/15/hello-world/","2026/02/15/ai-infra/scaling-law/","2026/02/15/blog/hexo-theme-switch/","2026/02/15/algorithm/数据结构与算法/","2026/02/15/cs-fundamentals/csapp/","2026/02/15/hpc/cuda-parallel-computing/","2026/02/15/hpc/opencl-guide/","2026/02/15/llm/illustrated-llm/","2026/02/15/llm-deploy/llama-cpp-deploy/","2026/02/15/python/python-learning/","2026/02/15/performance/arm-streamline/","2026/02/15/performance/ad1000-gpu-analysis/","2026/02/15/tools/openclaw-commands/"];
-            function toRandomPost() {
-                const randomPost = posts[Math.floor(Math.random() * posts.length)];
-                pjax.loadUrl(GLOBAL_CONFIG.root + randomPost);
-            }
-        </script>
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>
