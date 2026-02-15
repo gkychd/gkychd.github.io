@@ -185,6 +185,35 @@
   
   
   <entry>
+    <title>图解大语言模型</title>
+    <link href="/2026/02/15/llm/illustrated-llm/"/>
+    <url>/2026/02/15/llm/illustrated-llm/</url>
+    
+    <content type="html"><![CDATA[<h3 id="一、大语言模型简介"><a href="#一、大语言模型简介" class="headerlink" title="一、大语言模型简介"></a>一、大语言模型简介</h3><ol><li>发展历史：<ol><li>词袋模型：相当于统计一句话中某个词（token）出现的次数，其数量在向量的指定维度表示。该模型忽略了语义特征与含义。</li><li>word2vec：用神经网络训练得到，具有语义信息，即具有相似语义的单词在向量表示上越靠近。</li><li></li></ol></li></ol>]]></content>
+    
+    
+    <categories>
+      
+      <category>LLM</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>大语言模型</tag>
+      
+      <tag>LLM</tag>
+      
+      <tag>深度学习</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>llama.cpp 本地部署教程</title>
     <link href="/2026/02/15/llm-deploy/llama-cpp-deploy/"/>
     <url>/2026/02/15/llm-deploy/llama-cpp-deploy/</url>
@@ -201,11 +230,11 @@
     
     <tags>
       
+      <tag>LLM</tag>
+      
       <tag>llama.cpp</tag>
       
       <tag>本地部署</tag>
-      
-      <tag>LLM</tag>
       
     </tags>
     
@@ -264,35 +293,6 @@
       <tag>ARM</tag>
       
       <tag>Streamline</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>图解大语言模型</title>
-    <link href="/2026/02/15/llm/illustrated-llm/"/>
-    <url>/2026/02/15/llm/illustrated-llm/</url>
-    
-    <content type="html"><![CDATA[<h3 id="一、大语言模型简介"><a href="#一、大语言模型简介" class="headerlink" title="一、大语言模型简介"></a>一、大语言模型简介</h3><ol><li>发展历史：<ol><li>词袋模型：相当于统计一句话中某个词（token）出现的次数，其数量在向量的指定维度表示。该模型忽略了语义特征与含义。</li><li>word2vec：用神经网络训练得到，具有语义信息，即具有相似语义的单词在向量表示上越靠近。</li><li></li></ol></li></ol>]]></content>
-    
-    
-    <categories>
-      
-      <category>LLM</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
-      <tag>LLM</tag>
-      
-      <tag>大语言模型</tag>
-      
-      <tag>深度学习</tag>
       
     </tags>
     
